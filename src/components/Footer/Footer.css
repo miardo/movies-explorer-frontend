@@ -1,0 +1,135 @@
+.footer {
+    background-color: #F8F8F8;
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 79px;
+    padding-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+.footer_unhidden {
+    display: flex;
+}
+
+.footer__text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #A0A0A0;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #E8E8E8;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer__block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer__block-date {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer__block-links-list {
+    list-style: none;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.footer__block-text {
+    margin-right: 20px;
+}
+
+.footer__block-text:last-of-type {
+    margin-right: 0;
+}
+
+.footer__block-link {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    text-decoration: none;
+    transition: 150ms ease-out;
+}
+
+.footer__block-link:hover {
+    opacity: 0.7;
+    transition: 150ms ease-in;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .footer {
+        background-color: #FAFAFA;
+        padding-top: 79px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer__text {
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 21px;
+    }
+    
+    .footer__block {
+        flex-direction: column-reverse;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .footer__block-date {
+        font-size: 12px;
+        line-height: 15px;
+        color: #A0A0A0;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .footer__block-links-list {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+    
+    .footer__block-text {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+    
+    .footer__block-text:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    .footer__block-link {
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+    }
+}
