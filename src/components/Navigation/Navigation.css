@@ -1,0 +1,233 @@
+.navigation {
+    display: flex;
+    width: 100%;
+    z-index: 1;
+}
+
+.navigation__menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navigation__buttons-list {
+    display: flex;
+    margin: auto;
+    list-style: none;
+    padding-left: 62px;
+}
+
+.navigation__button:last-of-type {
+    margin-left: 17px;
+}
+
+.navigation__main-button {
+    display: none;
+}
+
+.navigation__all-films-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: right;
+    color: #000000;
+    transition: 150ms ease-out;
+}
+
+.navigation__all-films-button:hover {
+    opacity: 0.7;
+    transition: 150ms ease-in;
+}
+
+.navigation__saved-films-button {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: right;
+    color: #000000;
+    transition: 150ms ease-out;
+}
+
+.navigation__saved-films-button:hover {
+    opacity: 0.7;
+    transition: 150ms ease-in;
+}
+
+.navigation__acc {
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    padding-left: 11px;
+    padding-right: 37px;
+    max-width: 100px;
+    height: 32px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+    color: #000000;
+    box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-x: 70px;
+    background-image: url(../../images/navigation-acc-icon.svg);
+    transition: 150ms ease-out;
+}
+
+.navigation__acc:hover {
+    opacity: 0.8;
+    transition: 150ms ease-in;
+}
+
+.navigation__burger-btn {
+    display: none;
+}
+
+.navigation__link_active {
+    font-weight: 500;
+    font-size: 13px;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {    
+    .navigation__menu {
+        justify-content: flex-end;
+    }
+
+    .navigation__buttons-list {
+        display: none;
+    }
+
+    .navigation__button {
+        margin: auto;
+    }
+
+    .navigation__acc {
+        display: none;
+    }
+
+    .navigation__button:last-of-type {
+        margin-left: 0;
+    }
+
+    .navigation__button:nth-of-type(2) {
+        margin-top: 28px;
+        margin-bottom: 28px;
+    }
+
+    .navigation__burger-btn {
+        display: flex;
+        width: 38px;
+        height: 38px;
+        background-color: transparent;
+        border: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../../images/navigation-burger-btn.svg);
+        cursor: pointer;
+        transition: 150ms ease-out;
+    }
+
+    .navigation__burger-btn:hover {
+        opacity: 0.8;
+        transition: 150ms ease-in;
+    }
+    
+    .navigation_opened-burger-menu {
+        transition: 150ms ease-in;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .navigation__menu_opened-burger-menu {
+        flex-direction: column;
+        width: 520px;
+        background-color: #FAFAFA;
+        height: 100%;
+        right: 0;
+        top: 0;
+        position: absolute;
+    }
+
+    .navigation__buttons-list_opened-burger-menu {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        margin-top: 105px;
+    }
+
+    .navigation__main-button_opened-burger-menu {
+        display: block;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #000000;
+        text-decoration: none;
+    }
+
+    .navigation__all-films-button_opened-burger-menu {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .navigation__saved-films-button_opened-burger-menu {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .navigation__link_active {
+        padding-bottom: 4px;
+        border-bottom: solid 2px #000;
+    }
+
+    .navigation__burger-btn_close {
+        align-self: flex-end;
+        margin-top: 23px;
+        margin-right: 23px;
+        width: 22px;
+        height: 22px;
+        background-image: url(../../images/navigation-menu-close.svg);
+        transition: 150ms ease-out;
+    }
+
+    .navigation__burger-btn_close:hover {
+        transition: 150ms ease-in;
+    }
+
+    .navigation__acc_opened-burger-menu {
+        display: flex;
+        align-self: center;
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .navigation__menu_opened-burger-menu {
+        width: 100%;
+    }
+}

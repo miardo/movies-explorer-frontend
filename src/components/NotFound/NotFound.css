@@ -1,0 +1,80 @@
+.not-found {
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.not-found__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 140px;
+    line-height: 169px;
+    text-align: center;
+    color: #000000;
+}
+
+.not-found__text {
+    margin-top: 5px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+}
+
+.not-found__button-link {
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 60px;
+}
+
+.not-found__button {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #3456F3;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 150ms ease-out;
+}
+
+.not-found__button:hover {
+    opacity: 0.7;
+    transition: 150ms ease-in;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .not-found__button-link {
+        margin-bottom: 222px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .not-found__title {
+        font-size: 80px;
+        line-height: 97px; 
+    }
+    
+    .not-found__text {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .not-found__button-link {
+        margin-bottom: 30px;
+    }
+}

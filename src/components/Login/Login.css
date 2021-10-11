@@ -1,0 +1,235 @@
+.login {
+    background-color: #FAFAFA;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.login__logo-link {
+    align-self: flex-start;
+    transition: 150ms ease-out;
+}
+
+.login__logo-link :hover {
+    opacity: 0.8;
+    transition: 150ms ease-in;
+}
+
+.login__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-self: flex-start;
+}
+
+.login__edit-form-name {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #A0A0A0;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.login__edit-form-input {
+    max-width: 366px;
+    width: 100%;
+    background: #F4F4F4;
+    border-radius: 8px;
+    border: none;
+    padding: 15px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    margin-right: 15px;
+}
+
+.login__edit-form-box {
+    width: 396px;
+}
+
+.login__edit-form-box:first-of-type {
+    padding-bottom: 20px;
+}
+
+.login__buttons-list {
+    list-style: none;
+    padding-left: 0;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 179px;
+}
+
+.login__button {
+    display: flex;
+    justify-content: center;
+}
+
+.login__button:last-of-type {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.login__save-button-text {
+    background: #3456F3;
+    border-radius: 3px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 396px;
+    padding-top: 13px;
+    padding-bottom: 15px;
+    border: none;
+    cursor: pointer;
+    transition: 150ms ease-out;
+}
+
+.login__save-button-text:hover {
+    opacity: 0.8;
+    transition: 150ms ease-in;
+}
+
+.login__button-text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login__button-link {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #3456F3;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 6px;
+    cursor: pointer;
+    transition: 150ms ease-out;
+}
+
+.login__button-link:hover {
+    transition: 150ms ease-in;
+    opacity: 0.7;
+}
+
+.login__input-error {
+    margin-top: 10px;
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
+.login__error {
+    top: 530px;
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #FF004C;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .login {
+        padding-top: 232px;
+        padding-bottom: 232px;
+    }  
+
+    .login__error {
+        top: 690px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .login {
+        padding-top: 56px;
+        padding-bottom: 30px;
+    }    
+    
+    .login__logo-link {
+        align-self: center;
+    }
+    
+    .login__title {
+        margin-top: 50px;
+        margin-bottom: 80px;
+        align-self: center;
+    }
+
+    .login__edit-form-input {
+        max-width: 230px;
+        width: 100%;
+    }
+    
+    .login__edit-form-box {
+        width: 260px;
+    }
+
+    .login__buttons-list {
+        margin-top: 267px;
+    }
+
+    .login__save-button-text {
+        width: 260px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .login__error {
+        top: 660px;
+    }
+
+    .login__button:last-of-type {
+        margin-top: 16px;
+    }
+    
+    .login__button-text {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    
+    .login__button-link {
+        font-size: 12px;
+        line-height: 15px;
+        margin-left: 7px;
+    }
+}
