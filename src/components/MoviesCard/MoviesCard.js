@@ -28,7 +28,6 @@ function MoviesCard(props) {
     const savedMovies = JSON.parse(localStorage.getItem('savedMovies'));
     const currentMovie = savedMovies.find((movie) => movie.nameRU === props.movie.nameRU);
 
-
     function handleLikeButtonCLick() {
         props.onMovieSave(movie);
         setIsSaved(true);
@@ -48,7 +47,7 @@ function MoviesCard(props) {
         if (currentMovie) {
             setIsSaved(true)
         }
-    }, [currentMovie, location])
+    }, [location])
 
     return (
         <article className="movies-card">
@@ -61,7 +60,7 @@ function MoviesCard(props) {
                     <button className={`movies-card__header-favorite ${!isDeleteButtonVisible ? 'movies-card__header-favorite_delete' : ''}`} onClick={handleDeleteMovie}></button> :
                     <button className={`movies-card__header-favorite ${isSaved ? 'movies-card__header-favorite_saved' : ''}`} onClick={isSaved ? handleDisLike : handleLikeButtonCLick}></button>}
             </div>
-            <a className="movies-card__link" href={props.saved ? props.movie.trailer : props.movie.trailerLink}><img className="movies-card__img" src={props.saved ? props.movie.image : image} alt="{props.movie.nameRU}" /></a>
+            <a className="movies-card__link" target="_blank" rel="noreferrer" href={props.saved ? props.movie.trailer : props.movie.trailerLink}><img className="movies-card__img" src={props.saved ? props.movie.image : image} alt="{props.movie.nameRU}" /></a>
         </article>
     );
 }

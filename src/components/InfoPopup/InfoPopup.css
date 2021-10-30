@@ -27,6 +27,10 @@
     line-height: 16px;
 }
 
+.info-popup__title_hidden {
+    visibility: hidden;
+}
+
 .info-popup__button {
     width: 12px;
     height: 12px;
@@ -48,6 +52,10 @@
     font-weight: normal;
     font-size: 15px;
     line-height: 16px;
+}
+
+.info-popup__text_success {
+    color: #1ad11a;
 }
 
 .info-popup_hidden {

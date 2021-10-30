@@ -3,7 +3,7 @@
 ## Описание
 Репозиторий для фронтенда дипломной работы.
 
-- `Frontend` https://api.diplom.karimov.nomoredomains.monster
+- `Frontend` https://diplom.karimov.nomoredomains.monster/
 
 - `Server ip`  178.154.226.192
 

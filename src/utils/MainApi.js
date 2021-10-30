@@ -1,5 +1,13 @@
 const BASE_URL = 'https://api.diplom.karimov.nomoredomains.monster';
-export function register (name, password, email) {
+
+const checkResponse = (res) => {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Ошибка ${res.status}`);
+}
+
+export function register(name, password, email) {
     return fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: {
@@ -13,10 +21,10 @@ export function register (name, password, email) {
             "email": email
         })
     })
-        .then((res) => res.json())
+        .then(checkResponse)
 }
 
-export function authorize (password, email) {
+export function authorize(password, email) {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
         headers: {
@@ -29,9 +37,9 @@ export function authorize (password, email) {
             "email": email
         })
     })
-        .then((response => response.json()))
+        .then(checkResponse)
         .then((data) => {
-            if (data.token){
+            if (data.token) {
                 localStorage.setItem('token', data.token);
             }
             return data;
@@ -48,7 +56,7 @@ export function getUserData(token) {
         },
         credentials: 'include'
     })
-        .then(res => res.json())
+        .then(checkResponse)
         .then(data => data)
 }
 
@@ -66,7 +74,7 @@ export function updateUserData(token, name, email) {
             email: email
         })
     })
-        .then(res => res.json())
+        .then(checkResponse)
         .then(data => data)
 }
 
@@ -80,7 +88,7 @@ export function getSavedMovies(token) {
         },
         credentials: 'include',
     })
-        .then(res => res.json())
+        .then(checkResponse)
         .then(data => data)
 }
 
@@ -107,7 +115,7 @@ export function saveMovie(token, movie) {
             movieId: movie.movieId
         })
     })
-        .then(res => res.json())
+        .then(checkResponse)
         .then(data => data)
 }
 
@@ -121,6 +129,6 @@ export function deleteMovie(token, movieId) {
         },
         credentials: 'include',
     })
-        .then(res => res.json())
+        .then(checkResponse)
         .then(data => data)
 }

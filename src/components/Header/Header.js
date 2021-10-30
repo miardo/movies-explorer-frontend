@@ -4,7 +4,7 @@ import Navigation from '../Navigation/Navigation';
 import "./Header.css";
 import logo from "../../images/header-logo.svg";
 
-function Header() {
+function Header(props) {
     let location = useLocation();
 
     return (
@@ -12,7 +12,7 @@ function Header() {
             <NavLink to="/" className="header__logo-link">
             <img className="header__logo" src={logo} alt="Логотип"/>
             </NavLink>
-            {location.pathname === '/' ?
+            {(location.pathname === '/' && !props.loggedIn) ?
             <ul className="header__buttons-list">
                 <li className="header__button"><NavLink to="/signup" className="header__reg-button">Регистрация</NavLink></li>
                 <li className="header__button"><NavLink to="/signin" className="header__login-button">Войти</NavLink></li>

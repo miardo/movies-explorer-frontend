@@ -94,6 +94,8 @@ function App() {
             .then((res) => {
                 setCurrentUser(res);
                 setIsUpdate(true);
+                setErrorMessage('Профиль обновлен');
+                setIsPopupOpen(true);
             })
             .catch(() => {
                 setErrorMessage('При обновлении профиля произошла ошибка');
@@ -106,6 +108,7 @@ function App() {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('token');
         localStorage.removeItem('movies');
+        setSavedMovies([]);
         setMovies([]);
         setAllMovies([]);
         history.push('/');
@@ -119,7 +122,9 @@ function App() {
     function handleSearchMovies(movies, keyword) {
         let filteredMovies = [];
         movies.forEach((movie) => {
-            if (movie.nameRU.indexOf(keyword) > -1) {
+            if (
+                movie.nameRU.toLowerCase().indexOf(keyword.toLowerCase()) > -1
+                ) {
                 if (isShortMoviesChecked) {
                     if (movie.duration <= 40) {
                         return filteredMovies.push(movie);
@@ -133,8 +138,13 @@ function App() {
     }
 
     function searchSavedMovies(keyword) {
-        const allSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
-        const searchSavedResult = handleSearchMovies(allSavedMovies[0], keyword);
+        let allSavedMovies = "";
+        if (Array.isArray(JSON.parse(localStorage.getItem('savedMovies'))[0])) {
+            allSavedMovies = JSON.parse(localStorage.getItem('savedMovies'))[0];
+        } else {
+            allSavedMovies = JSON.parse(localStorage.getItem('savedMovies'));
+        }
+        const searchSavedResult = handleSearchMovies(allSavedMovies, keyword);
         setSavedMovies(searchSavedResult);
     }
 
@@ -245,7 +255,7 @@ function App() {
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
-            <Header />
+            <Header loggedIn={isLoggedIn} />
             <Switch>
                 <ProtectedRoute
                     exact path="/movies"
@@ -298,7 +308,7 @@ function App() {
             </Switch>
             <Footer />
             <InfoPopup
-                loginErrorMessage={errorMessage}
+                errorMessage={errorMessage}
                 popupOpen={isPopupOpen}
                 closePopup={closePopup}
             />

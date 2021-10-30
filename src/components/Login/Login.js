@@ -18,15 +18,15 @@ function Login(props) {
             <img className="login__logo" src={logo} alt="Логотип"/>
             </NavLink>
             <h2 className="login__title">Рады видеть!</h2>
-            <form className="login__edit-form" onSubmit={handleLogin} noValidate>
+            <form className="login__edit-form" onSubmit={handleLogin}>
             <article className="login__edit-form-box">
                 <p className="login__edit-form-name">E-mail</p>
-                <input className="login__edit-form-input" type="email" name="email" placeholder="Email" autoComplete="off" value={values.email || ''} onChange={handleChange}/>
+                <input className="login__edit-form-input" type="email" name="email" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" placeholder="Email" autoComplete="off" value={values.email || ''} onChange={handleChange}/>
                 <span className="login__input-error" id="email-error">{errors.email}</span>
             </article>
             <article className="login__edit-form-box">
                 <p className="login__edit-form-name">Пароль</p>
-                <input className="login__edit-form-input" type="password" name="password" placeholder="" value={values.password || ''} onChange={handleChange}/>
+                <input className="login__edit-form-input" minLength="8" type="password" name="password" placeholder="" value={values.password || ''} onChange={handleChange}/>
                 <span className="login__input-error" id="password-error">{errors.password}</span>
             </article>
             <button className={`login__save-button-text ${(isFormValid && values.email) ? '' : 'login__save-button-text_disabled'}`} type="submit" disabled={!isFormValid}>Войти</button>

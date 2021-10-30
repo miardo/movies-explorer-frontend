@@ -9,6 +9,8 @@ function Profile(props) {
 
     const currentUser = useContext(CurrentUserContext);
 
+    const [isValuesChecked, setIsValuesChecked] = useState(false);
+
     useEffect(() => {
         setValues(currentUser);
     }, [currentUser, setValues]);
@@ -33,10 +35,25 @@ function Profile(props) {
         }
     }, [props.isSaving])
 
+    function checkValues() {
+        if (
+            currentUser.email === values.email &&
+            currentUser.name === values.name
+        ) {
+            setIsValuesChecked(false);
+        } else {
+            setIsValuesChecked(true);
+        }
+    }
+
+    useEffect(() => {
+        checkValues();
+    }, [handleChange]);
+
     return (
         <section className="profile">
             <h2 className="profile__title">Привет, {currentUser.name}!</h2>
-            <form className="profile__edit-form" onSubmit={handleSubmit} noValidate>
+            <form className="profile__edit-form" onSubmit={handleSubmit} >
                 <article className="profile__edit-form-box">
                     <div className="profile__edit-form-data">
                         <p className="profile__edit-form-name">Имя</p>
@@ -47,11 +64,11 @@ function Profile(props) {
                 <article className="profile__edit-form-box">
                     <div className="profile__edit-form-data">
                         <p className="profile__edit-form-name">E-mail</p>
-                        <input className="profile__edit-form-input" type="email" name="email" required value={values.email || ''} disabled={isFormDisabled} onChange={handleChange} />
+                        <input className="profile__edit-form-input" type="email" name="email" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" required value={values.email || ''} disabled={isFormDisabled} onChange={handleChange} />
                     </div>
                     <span className="profile__input-error profile__input-error_form-style" id="email-error">{errors.email}</span>
                 </article>
-                <button type="submit" className={`${isFormDisabled && 'profile__button_hidden'} profile__save-button-text ${isFormValid ? '' : 'profile__save-button-text_disabled'}`}>Сохранить</button>
+                <button type="submit" className={`${isFormDisabled && 'profile__button_hidden'} profile__save-button-text ${(isFormValid && isValuesChecked) ? '' : 'profile__save-button-text_disabled'}`} disabled={!isFormValid || !isValuesChecked}>Сохранить</button>
             </form>
             <ul className="profile__buttons-list">
                 <li className={isFormDisabled ? 'profile__button' : 'profile__button_hidden'}><button className="profile__button-text" onClick={handleEditProfileClick}>Редактировать</button></li>
