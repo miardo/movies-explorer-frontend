@@ -27,6 +27,23 @@
     color: #A0A0A0;
     background-color: transparent;
     border: none;
+    outline: none;
+}
+
+.search__form-input-error {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #FF004C;
+    position: absolute;
+    margin-top: 55px;
+}
+
+.search__form-input-error_hidden {
+    display: none;
 }
 
 .search__form-button {
@@ -52,29 +69,26 @@
     transition: 150ms ease-in;
 }
 
+.search__form-button_disabled {
+    color: #F8F8F8;
+    background-color: #C2C2C2;
+}
+
 .search__switcher {
     display: flex;
     margin-top: 32px;
 }
 
-.search__switcher-button {
-    width: 36px;
-    height: 20px;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../images/search-switcher-on.svg);
-    transition: 100ms ease-out;
+.search__switcher-button{
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
 }
 
-.search__switcher-button_off {
-    transition: 100ms ease-in;
-    background-image: url(../../images/search-switcher-off.svg);
-}
-
-.search__switcher-text {
+.search__switcher-text{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
     font-family: Inter;
     font-style: normal;
     font-weight: normal;
@@ -83,7 +97,31 @@
     color: #000000;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 14px;
+}
+
+.search__switcher-text::before{
+    content: ' ';
+    display: inline-block;
+    background-image: url(../../images/search-switcher-off.svg);
+    width: 36px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    margin-right: 14px;
+}
+
+.search__switcher-button:checked + .search__switcher-text::before{
+    content: ' ';
+    background-image: url(../../images/search-switcher-on.svg);
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    align-self: center;
+    cursor: pointer;
+    margin-right: 14px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

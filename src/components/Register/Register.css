@@ -59,6 +59,7 @@
     line-height: 16px;
     color: #000000;
     margin-right: 15px;
+    outline: none;
 }
 
 .register__edit-form-box {
@@ -80,7 +81,6 @@
     margin: auto;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 91px;
 }
 
 .register__button {
@@ -105,11 +105,17 @@
     text-align: center;
     color: #FFFFFF;
     width: 396px;
+    margin-top: 91px;
     padding-top: 13px;
     padding-bottom: 15px;
     border: none;
     cursor: pointer;
     transition: 150ms ease-out;
+}
+
+.register__save-button-text_disabled {
+    background: #F8F8F8;
+    color: #C2C2C2;
 }
 
 .register__save-button-text:hover {

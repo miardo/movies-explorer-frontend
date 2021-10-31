@@ -9,6 +9,10 @@
     padding-bottom: 80px;
 }
 
+.more_hidden {
+    display: none;
+}
+
 .more__button {
     width: 100%;
     padding-top: 11px;

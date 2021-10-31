@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.facf21fb.chunk.css",
+    "main.js": "/static/js/main.09183a38.chunk.js",
+    "main.js.map": "/static/js/main.09183a38.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.613b1570.js",
+    "runtime-main.js.map": "/static/js/runtime-main.613b1570.js.map",
+    "static/js/2.13c94c4a.chunk.js": "/static/js/2.13c94c4a.chunk.js",
+    "static/js/2.13c94c4a.chunk.js.map": "/static/js/2.13c94c4a.chunk.js.map",
+    "static/js/3.b69e18a1.chunk.js": "/static/js/3.b69e18a1.chunk.js",
+    "static/js/3.b69e18a1.chunk.js.map": "/static/js/3.b69e18a1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.facf21fb.chunk.css.map": "/static/css/main.facf21fb.chunk.css.map",
+    "static/js/2.13c94c4a.chunk.js.LICENSE.txt": "/static/js/2.13c94c4a.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/Inter-Regular.e148c4a1.woff",
+    "static/media/about-me-link.2f133fb2.svg": "/static/media/about-me-link.2f133fb2.svg",
+    "static/media/about-me-photo.b72f27fe.jpg": "/static/media/about-me-photo.b72f27fe.jpg",
+    "static/media/header-logo.250bb8ba.svg": "/static/media/header-logo.250bb8ba.svg",
+    "static/media/MoviesCard.css": "/static/media/movies-card-fav-icon.e8308c9f.svg",
+    "static/media/movies-card-img.143ef437.png": "/static/media/movies-card-img.143ef437.png",
+    "static/media/Navigation.css": "/static/media/navigation-burger-btn.08035af1.svg",
+    "static/media/InfoPopup.css": "/static/media/navigation-menu-close.80dfd5bd.svg",
+    "static/media/Promo.css": "/static/media/promo-logo.3c50c765.svg",
+    "static/media/SearchForm.css": "/static/media/search-switcher-on.e5abd41b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.613b1570.js",
+    "static/js/2.13c94c4a.chunk.js",
+    "static/css/main.facf21fb.chunk.css",
+    "static/js/main.09183a38.chunk.js"
+  ]
+}
